@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoDuels-Helper Minimap
 // @namespace    https://geoduels.io/
-// @version      1.2
+// @version      1.3
 // @description  Conflict-free minimap for GeoDuels.io. Uses strict CSS isolation, safe event handling, AbortController for fetch cancellation, adaptive polling, and LRU cache. Optimized for performance and stability.
 // @author       CeresF3b
 // @match        https://geoduels.io/*
