@@ -1,119 +1,125 @@
 # 🗺️ GeoDuels-Helper Minimap
 
-[![License: **MIT**](https://img.shields.io/badge/License-**MIT**-blue.svg)](**LICENSE**) [![Version](https://img.shields.io/badge/version-3.6.0-green.svg)](geoduels-helper-minimap.user.js)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-3.6.0-green.svg)](geoduels-helper-minimap.user.js)
 
-> A conflict‑free, performance‑optimised minimap userscript for [GeoDuels.io](https://geoduels.io). > Real‑time location tracking, reverse geocoding, adaptive polling, and intelligent caching – all without interfering with the game.
+> Un userscript per la minimappa di [GeoDuels.io](https://geoduels.io), ottimizzato per le prestazioni e privo di conflitti.  
+> Tracking in tempo reale, geocodifica inversa, polling adattivo e caching intelligente, il tutto senza interferire con il gioco.
 
-⚠️ **Disclaimer**: This tool is intended for **singleplayer/practice use only**. Using automated tools in competitive modes may violate GeoDuels' Terms of Service. Use responsibly.
-
----
-
-## ✨ Features
-
-- 🗺️ **Real‑time minimap** – follows your position from the Street View iframe onto a draggable Leaflet map.
-- 📍 **Reverse geocoding** – shows the nearest country/city via OpenStreetMap Nominatim (with offline fallback).
-- 🎨 **Theme‑aware** – automatically adapts to light/dark mode.
-- 🔄 **Layer switching** – toggle between Standard, Satellite, and Topographic tiles.
-- 🧠 **Smart caching** – **LRU** cache with distance/time expiration reduces **API** calls.
-- ⚡ **Adaptive polling** – slows down when you’re stationary (5 s), speeds up when moving (1 s).
-- 💾 **View persistence** – remembers zoom and center between sessions.
-- 🛡️ **No conflicts** – strict **CSS** isolation, safe event handling, and `AbortController` for all network requests.
-- 🔌 **Emergency kill** – `Ctrl+Alt+K` instantly disables the script; keyboard shortcut `M` toggles the minimap.
-- 📱 ****SPA**‑safe** – auto‑cleanup on page unload, no `MutationObserver` loops, no memory leaks.
+⚠️ **Disclaimer**: Questo strumento è destinato esclusivamente all'uso in **singleplayer/pratica**. L'uso di strumenti automatizzati nelle modalità competitive può violare i Termini di Servizio di GeoDuels. Usa responsabilmente.
 
 ---
 
-## 🚀 Installation
+## ✨ Caratteristiche
 
-### Prerequisites
-
-- Browser: Chrome, Firefox, Edge, or Brave
-- Userscript manager: [Tampermonkey](https://[www.tampermonkey.net/](https://www.tampermonkey.net/)) (recommended), [Violentmonkey](https://violentmonkey.github.io/), or [Greasemonkey](https://[www.greasespot.net/](https://www.greasespot.net/))
-
-### Quick install
-
-## Click this link: `[https://raw.githubusercontent.com/CeresF3b/geoduels-helper/main/geoduels-helper.user.js`](https://raw.githubusercontent.com/CeresF3b/geoduels-helper/main/geoduels-helper.user.js`) ## Your userscript manager will open → confirm installation. ## Visit [geoduels.io](https://geoduels.io) and start a singleplayer game – the 🗺️ button will appear automatically.
-
-### Manual install
-
-## Download [`geoduels-helper.user.js`](geoduels-helper.user.js). ## Open your userscript manager dashboard → **Create new script** → paste the code. ## Ensure the script is enabled for `[https://geoduels.io/*`.](https://geoduels.io/*`.)
+- 🗺️ **Minimappa in tempo reale** – segue la tua posizione dall'iframe di Street View su una mappa Leaflet trascinabile.
+- 📍 **Geocodifica inversa** – mostra il paese/città più vicino tramite OpenStreetMap Nominatim (con fallback offline).
+- 🎨 **Compatibile con i temi** – si adatta automaticamente alla modalità chiara o scura.
+- 🔄 **Cambio livelli** – passa tra i layer Standard, Satellite e Topografico.
+- 🧠 **Cache intelligente** – cache LRU con scadenza per distanza/tempo per ridurre le chiamate API.
+- ⚡ **Polling adattivo** – rallenta quando sei fermo (5s), accelera quando ti muovi (1s).
+- 💾 **Persistenza della visuale** – ricorda lo zoom e il centro della mappa tra le sessioni.
+- 🛡️ **Nessun conflitto** – isolamento CSS rigoroso, gestione sicura degli eventi e `AbortController` per tutte le richieste di rete.
+- 🔌 **Chiusura di emergenza** – `Ctrl+Alt+K` disabilita istantaneamente lo script; la scorciatoia `M` attiva/disattiva la minimappa.
+- 📱 **SPA‑safe** – pulizia automatica alla chiusura della pagina, nessun loop di `MutationObserver`, nessuna perdita di memoria.
 
 ---
 
-## 🕹️ Usage
+## 🚀 Installazione
 
-- **Toggle minimap** – click the 🗺️ button or press `M` (when no text field is focused).
-- **Drag button** – click‑and‑drag the button anywhere; the minimap follows.
-- **Zoom & pan** – scroll wheel or pinch on the minimap. Your view is saved automatically.
-- **Switch layers** – use the Std/Sat/Top buttons inside the minimap (if enabled).
-- **Location name** – the bottom bar shows the reverse‑geocoded place name, with a green dot when connected.
+### Prerequisiti
+
+- **Browser**: Chrome, Firefox, Edge o Brave.
+- **Manager di userscript**: [Tampermonkey](https://www.tampermonkey.net/) (raccomandato), [Violentmonkey](https://violentmonkey.github.io/) o [Greasemonkey](https://www.greasespot.net/).
+
+### Installazione rapida
+
+1. **Clicca su questo link**: [geoduels-helper.user.js](https://raw.githubusercontent.com/CeresF3b/geoduels-helper/main/geoduels-helper.user.js)
+2. Il tuo manager di userscript si aprirà → **conferma l'installazione**.
+3. Visita [geoduels.io](https://geoduels.io) e avvia una partita singleplayer: il pulsante 🗺️ apparirà automaticamente.
+
+### Installazione manuale
+
+1. Scarica il file [`geoduels-helper.user.js`](geoduels-helper.user.js).
+2. Apri la dashboard del tuo manager di userscript → **Crea nuovo script** → incolla il codice.
+3. Assicurati che lo script sia abilitato per `https://geoduels.io/*`.
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## 🕹️ Utilizzo
 
-| Shortcut        | Action                           |
-|-----------------|----------------------------------|
-| `M`             | Toggle minimap visibility        |
-| `Ctrl+Alt+K`    | **Kill script** – full cleanup   |
-
-> `M` is ignored while typing in text fields to avoid interference.
+- **Attiva/Disattiva mappa**: clicca sul pulsante 🗺️ o premi `M` (quando non stai scrivendo in un campo di testo).
+- **Trascina pulsante**: clicca e trascina il pulsante ovunque; la minimappa lo seguirà.
+- **Zoom e Pan**: usa la rotella del mouse o il pinch-to-zoom sulla mappa. La visuale viene salvata automaticamente.
+- **Cambia layer**: usa i pulsanti Std/Sat/Top all'interno della minimappa.
+- **Nome posizione**: la barra inferiore mostra il nome del luogo, con un punto verde quando la connessione è attiva.
 
 ---
 
-## ⚙️ Configuration
+## ⌨️ Scorciatoie da Tastiera
 
-Open the script in your userscript manager and edit the `**CFG**` object at the top:
+| Scorciatoia | Azione |
+| :--- | :--- |
+| `M` | Attiva/Disattiva visibilità minimappa |
+| `Ctrl+Alt+K` | **Kill script** – pulizia completa e disattivazione |
+
+> [!NOTE]  
+> Il tasto `M` viene ignorato mentre si scrive nei campi di testo per evitare interferenze.
+
+---
+
+## ⚙️ Configurazione
+
+Apri lo script nel tuo manager e modifica l'oggetto `CFG` all'inizio del codice:
 
 ```javascript
-const **CFG** = {
-    **DEBUG**: false,                   // Enable console logs
-    BTN_TOP: **100**,                   // Button start Y (px)
-    BTN_LEFT: 20,                   // Button start X (px)
-    MAP_GAP: 8,                     // Gap between button and map (px)
-    POLL_INTERVAL: **2500**,            // Normal polling interval (ms)
-    POLL_INTERVAL_FAST: **1000**,       // Fast polling when moving >50m
-    POLL_INTERVAL_SLOW: **5000**,       // Slow polling when stationary (<10m)
-    DISTANCE_THRESHOLD_SLOW: 10,    // Distance (m) to use slow poll
-    DISTANCE_THRESHOLD_FAST: 50,    // Distance (m) to use fast poll
-    NOMINATIM_DEBOUNCE: **2500**,       // Debounce **API** calls (ms)
-    STATUS_RESET: **10000**,            // Time before connection dot resets (ms)
-    CACHE_DISTANCE_M: **120**,          // Cache reuse radius (m)
-    MAX_CACHE_SIZE: 60,             // Max cached addresses (**LRU** eviction)
-    CACHE_MAX_AGE_MS: **600000**,       // Cache entry lifetime (10 min)
-    DEFAULT_ZOOM: 2,                // Initial zoom level (if no saved view)
-    DEFAULT_CENTER: [0, 0],         // Initial center (if no saved view)
-    ENABLE_KEYBOARD_TOGGLE: true,   // Allow M key toggle
-    ENABLE_LAYER_SWITCHER: true,    // Show layer buttons
-    PREFER_CANVAS_RENDERER: true,   // Use canvas for smoother rendering
-    NOMINATIM_RETRIES: 2,           // **API** retry attempts
-    NOMINATIM_RETRY_BACKOFF: **500**,   // Initial retry delay (ms)
+const CFG = {
+    DEBUG: false,                   // Abilita i log in console
+    BTN_TOP: 100,                   // Posizione iniziale Y del pulsante (px)
+    BTN_LEFT: 20,                   // Posizione iniziale X del pulsante (px)
+    MAP_GAP: 8,                     // Spazio tra pulsante e mappa (px)
+    POLL_INTERVAL: 2500,            // Intervallo di polling normale (ms)
+    POLL_INTERVAL_FAST: 1000,       // Polling veloce quando ti muovi >50m
+    POLL_INTERVAL_SLOW: 5000,       // Polling lento quando sei fermo (<10m)
+    DISTANCE_THRESHOLD_SLOW: 10,    // Distanza (m) per il poll lento
+    DISTANCE_THRESHOLD_FAST: 50,    // Distanza (m) per il poll veloce
+    NOMINATIM_DEBOUNCE: 2500,       // Debounce chiamate API (ms)
+    STATUS_RESET: 10000,            // Tempo prima del reset del punto di stato (ms)
+    CACHE_DISTANCE_M: 120,          // Raggio di riutilizzo della cache (m)
+    MAX_CACHE_SIZE: 60,             // Dimensione massima cache (LRU)
+    CACHE_MAX_AGE_MS: 600000,       // Durata della cache (10 min)
+    DEFAULT_ZOOM: 2,                // Zoom iniziale
+    DEFAULT_CENTER: [0, 0],         // Centro iniziale
+    ENABLE_KEYBOARD_TOGGLE: true,   // Abilita il tasto M
+    ENABLE_LAYER_SWITCHER: true,    // Mostra selettore livelli
+    PREFER_CANVAS_RENDERER: true,   // Usa canvas per un rendering fluido
+    NOMINATIM_RETRIES: 2,           // Tentativi retry API
+    NOMINATIM_RETRY_BACKOFF: 500,   // Ritardo iniziale retry (ms)
 };
 ```
 
 ---
 
-## 🧹 Safety & Cleanup
+## 🧹 Sicurezza e Pulizia
 
-- All timers and fetch calls use `AbortController` – no dangling requests.
-- On page unload or `Ctrl+Alt+K`, the script removes all **DOM** elements, stops all timers, and destroys the map instance.
-- **CSS** is strictly isolated (`contain:strict`, `isolation:isolate`) to never affect the game’s UI.
-
----
-
-## ❓ Troubleshooting
-
-- **Minimap doesn’t appear** – make sure you’re playing a game with a visible Street View iframe. The script waits for it.
-- **Stale place name** – move a few metres; the cache is distance/time‑limited.
-- **Button stuck** – press `Ctrl+Alt+K` to reset everything, then refresh.
-- **Performance worries** – enable `**DEBUG**: true` to see polling behaviour in the console.
+- Tutti i timer e le chiamate fetch usano `AbortController`: nessuna richiesta rimane appesa.
+- Alla chiusura della pagina o con `Ctrl+Alt+K`, lo script rimuove tutti gli elementi **DOM**, ferma i timer e distrugge l'istanza della mappa.
+- Il **CSS** è rigorosamente isolato (`contain:strict`, `isolation:isolate`) per non influenzare mai l'interfaccia del gioco.
 
 ---
 
-## 📜 License
+## ❓ Risoluzione dei Problemi
 
-**MIT** © CeresF3b – feel free to fork, modify, and share.
+- **La minimappa non appare**: assicurati di essere in una partita con l'iframe di Street View visibile. Lo script attende il caricamento del gioco.
+- **Nome del luogo non aggiornato**: muoviti di qualche metro; la cache è limitata per distanza e tempo.
+- **Pulsante bloccato**: premi `Ctrl+Alt+K` per resettare tutto e ricarica la pagina.
+- **Prestazioni**: imposta `DEBUG: true` nella configurazione per monitorare il comportamento del polling in console.
 
 ---
 
-*Optimised for performance and stability – happy duelling!* 🗺️
+## 📜 Licenza
+
+**MIT** © CeresF3b – sentiti libero di fare fork, modificare e condividere.
+
+---
+
+*Ottimizzato per stabilità e performance – buon divertimento!* 🗺️
