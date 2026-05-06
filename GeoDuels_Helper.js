@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoDuels-Helper Minimap
 // @namespace    https://geoduels.io/
-// @version      3.3.1
+// @version      1.0
 // @description  Production-grade minimap for GeoDuels.io. Optimized state management, scoped theme observation, centralized timer cleanup, zero observer loops, freeze-proof design. Shows your current location on a mini Leaflet map with reverse geocoding.
 // @author       CeresF3b
 // @match        https://geoduels.io/*
